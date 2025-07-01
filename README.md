@@ -1,1 +1,1 @@
-A simple RESTful CRUD service for managing Student records in a database (MongoDB). This CRUD service allows clients to create, read, update, and delete student entries, plus retrieve a count of how many records exist.
+A simple RESTful CRUD service for managing Student records in a database (MongoDB). This CRUD service allows clients to create, read, update, and delete student entries, plus retrieve a count of how many records exist in the database(MongoDB). 
