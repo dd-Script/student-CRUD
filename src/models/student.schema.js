@@ -13,7 +13,7 @@ const studentSchema = new mongoose.Schema({
   email: {
     type: String,
     required: [true, 'Student must have an email'],
-    unique: true // prevents two students from sharing the same email
+    unique: true 
   },
   age: {
     type: Number,
@@ -21,7 +21,7 @@ const studentSchema = new mongoose.Schema({
     min: [0, 'Age must be a non-negative number']
   }
 }, {
-  timestamps: true, // adds createdAt and updatedAt fields automatically
+  timestamps: true, 
   versionKey: false
 });
 
