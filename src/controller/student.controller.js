@@ -11,26 +11,25 @@ exports.createStudent = async (req, res, next) => {
   } catch (error) {
     // Handle duplicate-email error
     if (error.code === 11000) {
-      error.statusCode = 409;       // Conflict
+      error.statusCode = 409;       
       error.message = 'Email already in use';
-    }
-    // Handle Mongoose validation errors
+    }    
     if (error.name === 'ValidationError') {
-      error.statusCode = 400;       // Bad Request
+      error.statusCode = 400;       
     }
-    next(error); // forward to global error handler
+    next(error); 
   }
 };
 
-// Read (list) students, optionally paginated or filtered
+// Get (list) of students, optionally paginated or filtered
 exports.getAllStudents = async (req, res, next) => {
   try {
-    // support ?page= & limit=  & lastName=Smith
+    
     const page     = parseInt(req.query.page)  || 1;
     const limit    = parseInt(req.query.limit) || 0;
     const lastName = req.query.lastName;
 
-    // build filter only if lastName is provided
+  
     const filter = lastName ? { lastName } : {};
 
     const students = await Student

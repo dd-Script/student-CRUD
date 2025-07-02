@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// Define the shape of a Student document in MongoDB
+// Student Schema 
 const studentSchema = new mongoose.Schema({
   firstName: {
     type: String,
@@ -25,8 +25,8 @@ const studentSchema = new mongoose.Schema({
   versionKey: false
 });
 
-// Create a MongoDB index on email for fast lookups & uniqueness
+
 studentSchema.index({ email: 1 }, { unique: true });
 
-// Export a Model based on this schema
+
 module.exports = mongoose.model('Student', studentSchema); 

@@ -15,8 +15,7 @@ app.get('/', (req, res)=> {
 
 app.use('/students', studentRoutes);
 
-// GLOBAL ERROR HANDLER
-// Catches any thrown error and sends a JSON response
+// Global error handler
 app.use((err, req, res, next) => {
   console.error('Error handler caught:', err);
   res
